@@ -189,33 +189,158 @@ using namespace std;
 
 //-----DIAMOND shape with CAPITAL ALPHAS------
 
+// int main(){
+//     string alphas="abcdefghijklmnopqrstuvwxyz";
+//     int n;
+//     cout<<"enter a number : ";
+//     cin>>n;
+//     for(int i=1;i<n;i++){
+//         for(int j=1;j<=(n-i);j++){
+//             cout<<" ";
+//         }
+//         for(int k=0;k<(2*i-1);k++){
+//             // cout<<alphas[k];
+//             cout<<static_cast<char>('A'+k);
+//         }
+//         cout<<endl;
+//     }
+//     for(int i=1,i1=n;i<=n;i++,i1--){
+//         for(int j=1;j<i;j++){
+//             cout<<" ";
+//         }
+//         for(int k=0;k<(2*i1-1);k++){
+//             // cout<<alphas[k];
+//             cout<<static_cast<char>('A'+k);
+//         }
+//         cout<<endl;
+
+//     }
+
+
+// }
+
+
+// plus(+) pattern ----
+
+// int main(){
+//     int n;
+//     cin>>n;
+//     if(n%2==0){
+//         n++;
+//     }
+//     for(int i=1;i<=n;i++){
+//         for(int j=1;j<=(n-1)/2;j++){
+//             if(i!=(n+1)/2){
+//                 cout<<" ";
+//             }
+//         }
+//         for(int j=1;j<=n;j++){
+//             if(i==(n+1)/2){
+//                 cout<<"#";
+//             }
+//         }
+//         for(int k=1;k<=1;k++){
+//             if(i!=(n+1)/2){
+//                 cout<<"#";
+//             }
+//         }
+//         cout<<endl;
+//     }
+//     return 0;
+// }
+
+// V shape :-
+// int main(){
+//     int n;
+//     cout<<"enter a number :";
+//     cin>>n;
+//     for(int i=1;i<=n;i++){
+//         for(int j=1;j<=i;j++){
+//             cout<<j;
+//         }
+//         for(int k=1;k<=2*(n-i);k++){
+//             cout<<" ";
+//         }
+//         for(int m=i;m>=1;m--){
+//             cout<<m;
+//         }
+//         cout<<endl;
+//     }
+//     return 0;
+// }
+
+//RECTANGULAR with 2 CORNERs---------//
+
+// int main(){
+//     int n;
+//     cin>>n;
+//     for(int i=1;i<=n;i++){
+//         for(int j=1;j<=n;j++){
+//             if(i==1 || i==n || j==1 || j==n || j==i || j==(n+1-i)){
+//                 cout<<"#";
+//             }else { cout<<" ";}
+//         }
+//         cout<<endl;
+//     }
+//     return 0;
+// }
+
+//Below pattern :--
+//     1
+//    2 1
+//   1 2 3
+//  4 3 2 1
+// 1 2 3 4 5
+
+// int main(){
+//     int n;
+//     cin>>n;
+//     for(int i=1;i<=n;i++){
+//         for(int j=1;j<=(n-i);j++){
+//             cout<<" ";
+//         }
+//         for(int k=1,l=i;k<=i;k++,l--){
+//             if(i%2==0){
+//                 cout<<l<<" ";
+//             }else{cout<<k<<" ";}
+//         }
+//         cout<<endl;
+//     }
+//     return 0;
+// }
+
+//HOURGLASS with mix chars ----: 
+// 5 4 3 2 1 2 3 4 5
+//   * 4 3 2 1 2 3 *
+//     * * 3 2 1 2 * *
+//       * * * 2 1 * * *
+//         * * * * 1 * * * *
+
 int main(){
-    string alphas="abcdefghijklmnopqrstuvwxyz";
     int n;
     cout<<"enter a number : ";
     cin>>n;
-    for(int i=1;i<n;i++){
-        for(int j=1;j<=(n-i);j++){
+    for(int i=0;i<n;i++){
+        for(int j=0;j<i;j++){
             cout<<" ";
         }
-        for(int k=0;k<(2*i-1);k++){
-            // cout<<alphas[k];
-            cout<<static_cast<char>('A'+k);
+        for(int k=0;k<i;k++){
+            cout<<"* ";
+        }
+        for(int l=n-i;l>=1;l--){
+            cout<<l<<" ";
+        }
+        for(int m=2;m<=(n-i-1);m++){
+            cout<<m<<" ";
+            if(i==0 && m==(n-i-1)){
+                cout<<n;
+            }
+        }
+        for(int o=0;o<i;o++){
+            cout<<"* ";
         }
         cout<<endl;
     }
-    for(int i=1,i1=n;i<=n;i++,i1--){
-        for(int j=1;j<i;j++){
-            cout<<" ";
-        }
-        for(int k=0;k<(2*i1-1);k++){
-            // cout<<alphas[k];
-            cout<<static_cast<char>('A'+k);
-        }
-        cout<<endl;
-
-    }
-
-
+    return 0;
 }
 
