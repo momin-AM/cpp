@@ -169,20 +169,53 @@ using namespace std;
 
 //-----Hollow triangular same numbers on a row------
 
+// int main(){
+//     int n;
+//     cin>>n;
+//     for(int i=1;i<=n;i++){
+//         for(int j=1;j<=(n-i);j++){
+//             cout<<" ";
+//         }
+//         for(int k=1;k<=(2*i-1);k++){
+//             if(k==1 || k==(2*i-1) || i==1 || i==n){
+//                 cout<<i;
+//             }else{cout<<" ";}
+//         }
+//         cout<<endl;
+//     }
+
+//     return 0;
+// }
+
+//-----DIAMOND shape with CAPITAL ALPHAS------
+
 int main(){
+    string alphas="abcdefghijklmnopqrstuvwxyz";
     int n;
+    cout<<"enter a number : ";
     cin>>n;
-    for(int i=1;i<=n;i++){
+    for(int i=1;i<n;i++){
         for(int j=1;j<=(n-i);j++){
             cout<<" ";
         }
-        for(int k=1;k<=(2*i-1);k++){
-            if(k==1 || k==(2*i-1) || i==1 || i==n){
-                cout<<i;
-            }else{cout<<" ";}
+        for(int k=0;k<(2*i-1);k++){
+            // cout<<alphas[k];
+            cout<<static_cast<char>('A'+k);
         }
         cout<<endl;
     }
+    for(int i=1,i1=n;i<=n;i++,i1--){
+        for(int j=1;j<i;j++){
+            cout<<" ";
+        }
+        for(int k=0;k<(2*i1-1);k++){
+            // cout<<alphas[k];
+            cout<<static_cast<char>('A'+k);
+        }
+        cout<<endl;
 
-    return 0;
+    }
+
+
 }
+
