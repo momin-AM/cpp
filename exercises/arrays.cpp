@@ -38,7 +38,7 @@ using namespace std;
 //     return 0;
 // }
 
-/*find the number in a unique array where all the elements are being repeated but not that unique one*/
+/*find the  unique number in an array where all the elements are being repeated but not that unique one*/
 
 // int main(){
 //     int arr[7]={1,2,3,4,1,2,3};
@@ -51,3 +51,41 @@ using namespace std;
 //     }
 //     return 0;
 // }
+
+//find the second largest element in the given array
+#include <climits> 
+// int largestIndex(int arr[],int size){
+//     int biggest=arr[0],index;
+//     for(int i=0;i<5;i++){
+//         if(arr[i]>=biggest){
+//             biggest=arr[i];
+//             index=i;
+//         }
+//     }
+//     return index;
+// }
+// int main(){
+//     int arr[5]={1,5,3,5,5},biggest=arr[0],index,second;
+    
+//     index=largestIndex(arr,5);
+//     biggest=arr[index];
+//     arr[index]=INT_MIN;
+//     for(int i=0;i<5;i++){
+//         if(arr[i]==biggest) arr[i]=INT_MIN;
+//     }
+//     cout<<"second largest num is : "<<arr[largestIndex(arr,5)]<<endl;
+
+//     return 0;
+// }
+//new try of the above
+int main(){
+    int arr[5]={5,5,5,5,5},biggest=arr[0],index,second=arr[0];
+    for(int i=0;i<5;i++){
+        if(arr[i]>=biggest) biggest=arr[i];
+    }
+    for(int i=0;i<5;i++){
+        if(arr[i]>=second && arr[i]!=biggest) second=arr[i];
+    }
+    cout<<second<<endl;
+    return 0;
+}
