@@ -53,7 +53,7 @@ using namespace std;
 // }
 
 //find the second largest element in the given array
-#include <climits> 
+// #include <climits> 
 // int largestIndex(int arr[],int size){
 //     int biggest=arr[0],index;
 //     for(int i=0;i<5;i++){
@@ -78,14 +78,71 @@ using namespace std;
 //     return 0;
 // }
 //new try of the above
+// int main(){
+//     int arr[5]={5,5,5,5,5},biggest=arr[0],index,second=arr[0];
+//     for(int i=0;i<5;i++){
+//         if(arr[i]>=biggest) biggest=arr[i];
+//     }
+//     for(int i=0;i<5;i++){
+//         if(arr[i]>=second && arr[i]!=biggest) second=arr[i];
+//     }
+//     cout<<second<<endl;
+//     return 0;
+// }
+
+//rotating an array with k numbers
+
+// int main(){
+//     int arr[]={1,2,3,4,5},ansarr[5],k;
+//     cin>>k;
+//     int size=sizeof(arr)/sizeof(arr[0]);
+//     for(int i=0;i<size;i++){
+//         ansarr[(i+k)%size]=arr[i];
+//     }
+//     for(int i:ansarr) cout<<i<<" ";
+//     return 0;
+// }
+
+//doing this without creating an extra array
+// #include <vector>
+// #include <algorithm> 
+// int main(){
+//     vector <int> v;
+//     int k;
+//     cin>>k;
+//     for(int i=1;i<=5;i++) v.push_back(i);
+//     k=k%v.size();
+//     reverse(v.begin(),v.end());
+//     reverse(v.begin(),v.begin()+k);
+//     reverse(v.begin()+k,v.end());
+//     for(int i:v) cout<<i<<" ";
+//     return 0;
+// }
+
+//if an element present in an array(how many times) or not(production grade)
+#include <vector>
 int main(){
-    int arr[5]={5,5,5,5,5},biggest=arr[0],index,second=arr[0];
-    for(int i=0;i<5;i++){
-        if(arr[i]>=biggest) biggest=arr[i];
+    int n;
+    cin>>n;
+    vector <int> v;
+    int userElement;
+    for(int i=0;i<n;i++){
+        cin>>userElement;
+        v.push_back(userElement);
     }
-    for(int i=0;i<5;i++){
-        if(arr[i]>=second && arr[i]!=biggest) second=arr[i];
+    const int N=1e5;
+    vector <int> freq(N,0);
+    for(int i:v){
+        freq[i]++;
     }
-    cout<<second<<endl;
+    int query;
+    char again;
+    do{
+        cout<<"enter queries :";
+        cin>>query;
+        cout<<"present "<<freq[query]<<" times"<<endl;
+        cout<<"search again? y or n : ";
+        cin>>again;
+    }while(again=='y');
     return 0;
 }
