@@ -177,10 +177,29 @@ using namespace std;
 #include <vector>
 
 int main(){
-    vector <int> v;
     int n;
-    while(cin>>n){
-        v.push_back(n);
+    cin>>n;
+    vector <int> v(n);
+    for(int i=0;i<n;i++){
+        int temp; cin>>temp;
+        v[i]=temp;
+    }
+    cout<<"enter x: ";
+    int x; cin>>x;
+    int leftptr=0,midptr=1,rightptr=v.size()-1;
+    while(leftptr<midptr && midptr<rightptr){
+        if(v[leftptr]+v[rightptr]+v[midptr]==x){
+            cout<<"yes"<<endl;
+            return 0;
+        }else if(v[leftptr]+v[rightptr]+v[midptr]>x){
+            rightptr--;
+        }else {
+            if(midptr!=v.size()-2){
+                midptr++;
+            }else{
+                leftptr++;
+            }
+        }
     }
     
 }
