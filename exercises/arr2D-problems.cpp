@@ -160,38 +160,148 @@ using namespace std;
 // }
 
 //rotating an matrix(square- n*n) to 90 degrees
-#include <algorithm>
+// #include <algorithm>
 
-void rotate(vector <vector<int>> &v){
-    //transpose
-    for(int i=0;i<v.size();i++){
-        for(int j=0;j<i;j++){
-            swap(v[i][j],v[j][i]);
-        }
-    }
-    //reverse every row
-    for(int i=0;i<v.size();i++){
-        reverse(v[i].begin(),v[i].end());
-    }
-    return ;
-}
+// void rotate(vector <vector<int>> &v){
+//     //transpose
+//     for(int i=0;i<v.size();i++){
+//         for(int j=0;j<i;j++){
+//             swap(v[i][j],v[j][i]);
+//         }
+//     }
+//     //reverse every row
+//     for(int i=0;i<v.size();i++){
+//         reverse(v[i].begin(),v[i].end());
+//     }
+//     return ;
+// }
 
-int main(){
-    int n;
-    cin>>n;
-    vector <vector<int>> v(n, vector <int> (n));
-    for(int i=0;i<n;i++){
-        for(int j=0;j<n;j++){
-            cin>>v[i][j];
-        }
-    }
-    rotate(v);
-    cout<<"-----------"<<endl;
-    for(int i=0;i<v.size();i++){
-        for(int j=0;j<n;j++){
-            cout<<v[i][j]<<" ";
-        }
-        cout<<endl;
-    }
-    return 0;
-}
+// int main(){
+//     int n;
+//     cin>>n;
+//     vector <vector<int>> v(n, vector <int> (n));
+//     for(int i=0;i<n;i++){
+//         for(int j=0;j<n;j++){
+//             cin>>v[i][j];
+//         }
+//     }
+//     rotate(v);
+//     cout<<"-----------"<<endl;
+//     for(int i=0;i<v.size();i++){
+//         for(int j=0;j<n;j++){
+//             cout<<v[i][j]<<" ";
+//         }
+//         cout<<endl;
+//     }
+//     return 0;
+// }
+
+
+//pattern spriral matrix :
+
+// void printSpiral(vector <vector <int >> &v){
+//     int left=0, right=v[0].size()-1, top=0,bottom=v.size()-1;
+
+//     int r=v.size(), c= v[0].size();
+//     int turn=0;
+//     int x=0;
+//     while(left<=right && top<=bottom){
+//         if(turn ==0){
+//             for(int i=left;i<=right;i++){
+//                 cout<<v[top][i]<<" ";
+//             }
+//             top++;
+//             turn++;
+//         } else if(turn ==1){
+//             for(int i=top;i<=bottom;i++){
+//                 cout<<v[i][right]<<" ";
+//             }
+//             right--;
+//             turn++;
+//         }else if(turn ==2){
+//             for(int i=right;i>=left;i--){
+//                 cout<<v[bottom][i]<<" ";
+//             }
+//             bottom--;
+//             turn++;
+//         }else{
+//             for(int i=bottom;i>=top;i--){
+//                 cout<<v[i][left]<<" ";
+//             }
+//             left++;
+//             turn=0;
+//         }
+//     }
+    
+// }
+
+// int main(){
+//     int r,c;
+//     cin>>r>>c;
+//     vector <vector <int>> v(r,vector <int> (c));
+//     for(int i=0;i<r;i++){
+//         for(int j=0;j<c;j++){
+
+//             cin>>v[i][j];
+//         }
+//     }
+//     printSpiral(v);
+//     return 0;
+// }
+//input - n, generate an matrix with 1-n^2 values in spiral form
+
+// vector <vector <int>> genSpiralMatrix(int n){
+//     vector <vector <int >> v(n, vector <int> (n));
+//     int left=0, right=v[0].size()-1, top=0,bottom=v.size()-1;
+
+//     int r=v.size(), c= v[0].size();
+//     int turn=0;
+//     int x=1;
+//     while(left<=right && top<=bottom){
+//         if(turn ==0){
+//             for(int i=left;i<=right;i++){
+//                 v[top][i]=x;
+//                 x++;
+//             }
+//             top++;
+//             turn++;
+//         } else if(turn ==1){
+//             for(int i=top;i<=bottom;i++){
+//                 v[i][right]=x++;
+//             }
+//             right--;
+//             turn++;
+//         }else if(turn ==2){
+//             for(int i=right;i>=left;i--){
+//                 v[bottom][i]=x;
+//                 x++;
+//             }
+//             bottom--;
+//             turn++;
+//         }else{
+//             for(int i=bottom;i>=top;i--){
+//                 v[i][left]=x;
+//                 x++;
+//             }
+//             left++;
+//             turn=0;
+//         }
+//     }
+//     return v;
+    
+// }
+
+// int main(){
+//     int n;
+//     cin>>n;
+//     vector <vector <int>> v(n,vector <int> (n));
+
+//     v=genSpiralMatrix(n);
+//     for(int i=0;i<n;i++){
+//         for(int j=0;j<n;j++){
+//             cout<<v[i][j]<<" ";
+//         }
+//         cout<<endl;
+//     }
+//     return 0;
+// }
