@@ -105,3 +105,37 @@ int main(){
     cout<<*ptr<<endl;
     return 0;
 }
+
+//pointers types:
+#include <iostream>
+using namespace std;
+
+//1. wild pointer : declared but not intialised
+
+int main(){
+    int *ptrW;//wild pointer ->random address
+    cout<<"wild :" <<ptrW<<endl;
+    int *ptrN=NULL;//Null pointer
+    //NULL=0='\0'
+    cout<< "Null : " <<ptrN<<endl;
+    //Null pointer dereference has segmentation fault
+    //dangling pointer : when the var that it points to, gets deleted or disappears
+    int *ptrD=NULL;
+    {
+        int x=10;
+        ptrD=&x;
+    }
+    cout<<"dangling : "<<ptrD<<" : "<<*ptrD<<endl;
+
+    //void/generic pointer :
+    //these pointers can point to any type of value
+    float f=10.9;
+    void *ptrV=&f;
+    cout<<"void : "<<ptrV<<endl;
+    //void pointers can't be dereferenced 
+    //but u ca, u have to typecast the ptr to dereference
+    cout<<"void dereference :"<<*(float *)ptrV<<endl;
+
+    return 0;
+}
+
