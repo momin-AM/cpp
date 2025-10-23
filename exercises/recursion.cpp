@@ -105,3 +105,55 @@ int main(){
     return 0;
 }
 
+
+//recursion  -3
+#include <iostream>
+using namespace std;
+
+//remove all the occurences of 'a' in "abcax"
+
+string removeOcc(string str,int ind,int size){
+    if(ind==size) return "";
+    string x="";
+    x+=str[ind];
+    return (str[ind]=='a'?"":x)+removeOcc(str,ind+1,size);
+}
+
+int main(){
+    string str="abcaxabaab";
+    int size=sizeof(str)/sizeof(str[0]);
+    string res=removeOcc(str,0,size);
+    for(char i:res){
+        cout<<i<<" ";
+    }
+    return 0;
+}
+
+//check if a number is palindrome or not
+
+bool checkPal(int n,int *temp){
+    if(n==0){
+        return true;
+    }
+    bool res=checkPal(n/10,temp);
+    int lastDigit=*temp%10;
+    *temp/=10;
+    return res && ((n%10)==lastDigit);
+
+}
+
+int main(){
+    int n;
+    cin>>n;
+    int temp=n;
+    bool res;
+    // while (temp>0)
+    // {
+    //     rev=rev*10+temp%10;
+    //     temp/=10;
+    // }
+    res=checkPal(n,&temp);
+    cout<<res<<endl;
+    
+    return 0;
+}
