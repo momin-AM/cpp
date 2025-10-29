@@ -145,3 +145,58 @@ int main(){
     cout<<res<<endl;
     return 0;
 }
+
+
+//recursion  -7
+#include <iostream>
+using namespace std;
+
+
+//get all subsequences of a string
+#include <vector>
+void subsequences(string &str, int size, int ind, string res, vector <string> &vs){
+    if(ind==size){
+        vs.push_back(res);
+        return;
+    } 
+    subsequences(str,size,ind+1, res+str[ind],vs);
+    subsequences(str,size,ind+1, res, vs);
+
+}
+
+int main(){
+    string str="abc", subs="";
+    vector <string> vstr;
+    subsequences(str,str.size(),0,subs, vstr);  
+    for(string i : vstr) cout<< i<<" ";
+    return 0;
+}
+
+//return all the letter combinations for numbers 2-9(keypad phone letter values)
+#include <vector>
+
+void letComb(string numstr,int i,int size,vector <string> &data, vector<string> &res, string tres){
+    if(i==size){
+        res.push_back(tres);
+        return ;
+    }
+    int idata=numstr[i]-'0';
+    letComb(numstr,i+1,size,data,res,tres+ data[idata][0]);
+    letComb(numstr,i+1,size,data,res,tres+ data[idata][1]);
+    letComb(numstr,i+1,size,data,res,tres+ data[idata][2]);  
+    if(data[idata].size()==4){
+        letComb(numstr,i+1,size,data,res,tres+ data[idata][3]);
+    }
+}
+
+int main(){
+    string nums="27";
+    vector <string> data={"","","abc", "def", "ghi","jkl","mno","pqrs","tuv","wxyz"}, vs;
+    string tres;
+    letComb(nums,0,nums.size(),data,vs, "");
+    for(string i:vs){
+        cout<<i<<" ";
+    }
+
+    return 0;
+}
