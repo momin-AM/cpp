@@ -31,3 +31,51 @@ int main(){
     }
     return 0;
 }
+
+//day -1
+
+//selection sort algo---
+    //unstable - the sequence of duplicate values can be changed and not.
+#include <vector>
+// #include <climits>
+// int min0(vector <int> arr, int start, int &size){
+//     int res=INT_MAX, resInd=start;
+//     for(int i=start;i<size;i++){
+//         if(arr[i]<res) {
+//             res=arr[i];
+//             resInd=i;
+//         }
+//     }
+//     return resInd;
+// }
+
+void selectSort(vector <int> &arr){
+    int  size=arr.size();
+    for(int i=0;i<size-1;i++){
+        int smallestInd=i;
+        // int minimum=min0(arr,i,size);
+        for(int j=i+1;j<size;j++){
+            if(arr[j]<arr[smallestInd]){
+                smallestInd=j;
+            }
+        }
+        if(smallestInd!=i){
+            swap(arr[i],arr[smallestInd]);
+        }
+    }
+
+}
+
+int main(){
+    int n;
+    cin>>n;
+    vector <int> v(n);
+    for(int i=0;i<n;i++){
+        cin>>v[i];
+    }
+    selectSort(v);
+    for(int i:v) cout<<i<<" ";
+
+    return 0;
+}
+
