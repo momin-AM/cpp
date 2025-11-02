@@ -20,17 +20,6 @@ void my_sort(vector <int> &arr){
     }
 }
 
-int main(){
-    vector <int> v(5);
-    for(int i=0;i<5;i++){
-        cin>>v[i];
-    }
-    my_sort(v);
-    for(int i=0;i<5;i++){
-        cout<<v[i]<<" ";
-    }
-    return 0;
-}
 
 //day -1
 
@@ -66,16 +55,27 @@ void selectSort(vector <int> &arr){
 
 }
 
-int main(){
-    int n;
-    cin>>n;
-    vector <int> v(n);
-    for(int i=0;i<n;i++){
-        cin>>v[i];
-    }
-    selectSort(v);
-    for(int i:v) cout<<i<<" ";
 
-    return 0;
+//sort algo - 2
+
+
+//insertion sort
+
+    //def - repeatedly take element from unsorted subarray and insert in sorted subarray
+    //stable
+#include <vector>
+void sortArr(vector <int> &arr){
+    int size=arr.size();
+    for(int i=1;i<size;i++){
+        int curr=arr[i];
+        int j=i-1;
+        while(j>=0 && arr[j]>curr){
+            arr[j+1]=arr[j];
+            j--;
+        }
+        arr[j+1]=curr;
+    }
+    
 }
+
 
