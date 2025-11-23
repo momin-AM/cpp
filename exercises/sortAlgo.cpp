@@ -24,6 +24,7 @@ void my_sort(vector <int> &arr){
 //day -1
 
 //selection sort algo---
+    //take smallest and put at first
     //unstable - the sequence of duplicate values can be changed and not.
 #include <vector>
 // #include <climits>
