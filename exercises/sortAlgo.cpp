@@ -104,7 +104,7 @@ void merge(vector <int> &arr, int l,int mid, int r){
     while(j<n2) arr[k++]=arr2[j++];
 }
 
-
+//merge sort algo (4)
 void mergeSort(vector <int> &arr,int l,int r){
     if(l>=r) return ;
     int mid=(l+r)/2;
@@ -112,4 +112,25 @@ void mergeSort(vector <int> &arr,int l,int r){
     mergeSort(arr,mid+1,r);
     merge(arr,l,mid,r);
 }
+
+int pivotPartition(vector <int> &arr,int first,int last){
+    int i=first-1,pivot=arr[last];
+    for(int j=first;j<=last;j++){
+        if(arr[j]<pivot){
+            i++;
+            swap(arr[i],arr[j]);
+        }
+    }
+    i++;
+    swap(arr[last],arr[i]);
+    return i;
+}
+
+void quickSort(vector <int> &arr,int first,int last){
+    if(first>=last) return;
+    int pi=pivotPartition(arr,first,last);
+    quickSort(arr,first,pi-1);
+    quickSort(arr,pi+1,last);
+}
+
 
