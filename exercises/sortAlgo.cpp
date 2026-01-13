@@ -112,7 +112,7 @@ void mergeSort(vector <int> &arr,int l,int r){
     mergeSort(arr,mid+1,r);
     merge(arr,l,mid,r);
 }
-
+//quick sort (using pivot as last element)
 int pivotPartition(vector <int> &arr,int first,int last){
     int i=first-1,pivot=arr[last];
     for(int j=first;j<=last;j++){
